@@ -18,16 +18,32 @@ export const UserRating = () => {
 
     return (
         <div>
-            <button onClick={handleMinusClick}>[-]</button>
-            {count}
-            <Favorite />
-            {
-                [...Array(count)].map((heart, index) => {
-                    return <span key={index}> <Favorite /></span>
-                })
-            }
+            {/* First line: count + hearts */}
+            <div>
+                {count}
 
-            <button onClick={handlePlusClick}>[+]</button>
+                <Favorite />
+                {[...Array(Math.max(count - 1, 0))].map((heart, index) => {
+                    return <span key={index}> <Favorite /></span>
+                })}
+            </div>
+
+            {/* Second line: buttons */}
+            <div>
+                <button
+                    style={{ visibility: count > 0 ? 'visible' : 'hidden' }}
+                    onClick={handleMinusClick}
+                >
+                    [-]
+                </button>
+
+                <button
+                    style={{ visibility: count < 5 ? 'visible' : 'hidden' }}
+                    onClick={handlePlusClick}
+                >
+                    [+]
+                </button>
+            </div>
         </div>
     )
 }
