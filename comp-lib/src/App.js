@@ -1,47 +1,8 @@
-import Button from './components/Button'
+// import ButtonPage from './pages/ButtonPage'
+import AccordionPage from './pages/AccordionPage'
 
 const App = () => {
-  return (
-    <>
-      <div>
-        <Button
-          primary
-          danger
-          outline
-        >
-          Buy Now
-        </Button>
-      </div>
-      <div>
-        <Button
-          secondary
-          rounded
-        >
-          Secondary Button
-        </Button>
-      </div>
-      <div>
-        <Button danger>Delete</Button>
-      </div>
-      <div>
-        <Button
-          warning
-          outline
-          rounded
-        >
-          Are you sure?
-        </Button>
-      </div>
-      <div>
-        <Button
-          success
-          outline
-        >
-          Success
-        </Button>
-      </div>
-    </>
-  )
+  return <AccordionPage />
 }
 
 export default App
