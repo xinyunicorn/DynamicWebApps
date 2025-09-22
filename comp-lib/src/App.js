@@ -1,8 +1,9 @@
 // import ButtonPage from './pages/ButtonPage'
-import AccordionPage from './pages/AccordionPage'
+// import AccordionPage from './pages/AccordionPage'
+import CarouselPage from './pages/CarouselPage'
 
 const App = () => {
-  return <AccordionPage />
+  return <CarouselPage />
 }
 
 export default App
