@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const Carousel = (props) => {
   // destructure props with defaults
-  const { images = [], captions = [], autoPlay = false, interval = 3000, className, ...otherProps } = props
+  const {images = [], captions = [], autoPlay = false, interval = 3000, className, ...otherProps} = props
 
   // state: index of the current slide
   const [current, setCurrent] = useState(0)
