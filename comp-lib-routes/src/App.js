@@ -10,6 +10,7 @@ import DropdownPage from './pages/DropdownPage'
 // import './index.css'
 // data example
 // import dropdownData from './data/dropdown-data'
+import CarouselPage from './pages/CarouselPage'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/dropdown" element={<DropdownPage />} />
           {/* Add route here to your custom component */}
+          <Route path="/carousel" element={<CarouselPage />} />
         </Routes>
       </div>
     </div>
