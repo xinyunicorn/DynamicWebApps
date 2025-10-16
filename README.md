@@ -11,3 +11,5 @@ Week 2 Homework - user-rating
 Week 3/4 Homework - comp-lib
 
 Week 5 Homework - comp-lib-routes
+
+**Update as of 10/16, I've moved all the homework to their own folders for convenient access.**
