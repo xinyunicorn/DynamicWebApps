@@ -2,7 +2,7 @@ import ToDoItem from "./ToDoItem";
 
 // component representing a single day of tasks
 function ToDoDay(props) {
-  const { day, items, setItems } = props;
+  const {day, items, setItems} = props;
 
   // handle form submission to add a new task
   const handleSubmit = (e) => {
@@ -19,9 +19,7 @@ function ToDoDay(props) {
   const handleToggleComplete = (itemToToggle) => {
     setItems(
       items.map((item) =>
-        item.id === itemToToggle.id
-          ? { ...item, completed: !item.completed }
-          : item
+        item.id === itemToToggle.id ? { ...item, completed: !item.completed } : item
       )
     );
   };
@@ -34,9 +32,7 @@ function ToDoDay(props) {
   // calculate total tasks and productivity percentage
   const totalTasks = items.length;
   const completedTasks = items.filter((item) => item.completed).length;
-  const productivityPercent = totalTasks
-    ? Math.round((completedTasks / totalTasks) * 100)
-    : 0;
+  const productivityPercent = totalTasks ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
   return (
     <div className="todo-day">
@@ -46,7 +42,7 @@ function ToDoDay(props) {
       <div className="productivity-bar">
         <div
           className="progress"
-          style={{ width: `${productivityPercent}%` }}
+          style={{width: `${productivityPercent}%`}}
         ></div>
       </div>
       <p>{productivityPercent}% completed</p>

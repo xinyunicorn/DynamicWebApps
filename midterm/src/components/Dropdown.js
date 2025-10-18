@@ -1,10 +1,10 @@
 // referenced comp-lib-dropdown lecture to implement dropdown component
 
-import { useState, useEffect, useRef } from "react";
+import {useState, useEffect, useRef} from "react";
 
 // dropdown component for selecting background color
 function Dropdown(props) {
-  const { options, onChange, value } = props;
+  const {options, onChange, value} = props;
 
   // manage dropdown open/close state
   const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,7 @@
 # Weekly ToDo Tracker
 
+Link to slides: https://docs.google.com/presentation/d/1FVZkNfx0yxSdnRzNBINjU6ZEvPf5_6DPG0LKwT8f0nM/edit?usp=sharing
+
 ## Context
 
 - I like to organize and keep track of daily tasks
@@ -13,13 +15,27 @@
 
 ## Demo Time!
 
+### Project Directory Doesn't Exist:
+
+- create React project
+
+`npx create-react-app midterm`
+
+- copy over code from repo
+
+https://github.com/xinyunicorn/DynamicWebApps/tree/main/midterm
+
+- make sure to install all the external libraries and dependencies
+
+`npm install`
+
+***continue below***
+
+### Project Directory Exists:
+
 - cd into the folder
 
 `cd "C:\Users\xyzha\OneDrive\DWA\DynamicWebApps\midterm`
-
-- make sure to install all the extrnal libraries and dependencies
-
-`npm install`
 
 - run the code to get the site up and running!
 

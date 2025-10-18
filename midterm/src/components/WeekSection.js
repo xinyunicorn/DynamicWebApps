@@ -2,7 +2,7 @@ import ToDoDay from "./ToDoDay";
 
 // component representing a section of the week (weekdays or weekends)
 function WeekSection(props) {
-  const { title, days, todos, updateDayTodos, itemsPerRow } = props;
+  const {title, days, todos, updateDayTodos, itemsPerRow} = props;
 
   // split days into rows for layout
   // weekdays

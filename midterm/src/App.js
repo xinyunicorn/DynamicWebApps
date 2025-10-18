@@ -1,24 +1,30 @@
 // referenced https://codesandbox.io/p/sandbox/modest-feistel-zsttc9?file=%2Fsrc%2FApp.js%3A11%2C13&from-embed for initial project idea
 
-import { useState } from "react";
+import {useState} from "react";
 import "./index.css";
-import Dropdown from "./components/Dropdown";
+import Header from "./components/Header";
+import ProgressBar from "./components/ProgressBar";
 import WeekSection from "./components/WeekSection";
+import TaskSummary from "./components/TaskSummary";
 
 function App() {
-  const [background, setBackground] = useState({ label: "White", value: "white" });
+  // state for background color selection
+  const [background, setBackground] = useState({label: "White", value: "white"});
 
+  // color options for dropdown
   const colorOptions = [
-    { label: "White", value: "white" },
-    { label: "Pink", value: "#f5dcebff" },
-    { label: "Beige", value: "#f5f5dc" },
-    { label: "Mint", value: "#d3fcebff" },
-    { label: "Light Blue", value: "#cce6ff" },
-    { label: "Lavender", value: "lavender" },
+    {label: "White", value: "white"},
+    {label: "Pink", value: "#ffe8f6ff"},
+    {label: "Beige", value: "#ffffe8ff"},
+    {label: "Mint", value: "#eafff6ff"},
+    {label: "Light Blue", value: "#ebf6ffff"},
+    {label: "Lavender", value: "lavender"},
   ];
 
+  // update background when user selects a new color
   const handleColorChange = (option) => setBackground(option);
 
+  // main todos state: each day has its own list
   const [todos, setTodos] = useState({
     Monday: [],
     Tuesday: [],
@@ -29,14 +35,18 @@ function App() {
     Sunday: [],
   });
 
-  const totalTasks = Object.values(todos).reduce((acc, arr) => acc + arr.length, 0);
+  // calculate total and completed tasks across all days
+  const totalTasks = Object.values(todos).reduce((prev, curr) => prev + curr.length, 0);
   const completedTasks = Object.values(todos).reduce(
-    (acc, arr) => acc + arr.filter((t) => t.completed).length,
-    0
+    (prev, curr) => prev + curr.filter((t) => t.completed).length, 0
   );
-  const overallProgress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-  const updateDayTodos = (day, newList) => setTodos({ ...todos, [day]: newList });
+  // overall completion percentage
+  const overallProgress =
+    totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+
+  // update todos for a specific day
+  const updateDayTodos = (day, newList) => setTodos({...todos, [day]: newList});
 
   return (
     <div
@@ -51,20 +61,21 @@ function App() {
         flexDirection: "column",
       }}
     >
-      <header className="app-header">
-        <h1>Weekly To-Do Tracker</h1>
-        <Dropdown options={colorOptions} value={background} onChange={handleColorChange} />
-      </header>
+      {/* header with title and color dropdown */}
+      <Header
+        colorOptions={colorOptions}
+        background={background}
+        onColorChange={handleColorChange}
+      />
 
-      <div className="overall-progress-container">
-        <h2>
-          Overall Progress: {overallProgress}%
-          <span className={`star ${overallProgress === 100 ? "visible" : "hidden"}`}>⭐</span>
-        </h2>
-        <div className="overall-progress-bar">
-          <div className="overall-progress-fill" style={{ width: `${overallProgress}%` }}></div>
-        </div>
+      {/* overall progress bar */}
+      <div style={{ marginBottom: "30px" }}>
+        <ProgressBar progress={overallProgress} />
       </div>
+
+
+      {/* task summary component showing total tasks */}
+      <TaskSummary totalTasks={totalTasks} completedTasks={completedTasks} />
 
       {/* weekdays section */}
       <WeekSection
