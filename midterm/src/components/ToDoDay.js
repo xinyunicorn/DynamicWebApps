@@ -10,7 +10,7 @@ function ToDoDay(props) {
     e.preventDefault();
     const input = e.target.item;
     // create a new task object; use Date.now() as a simple unique id
-    const newItem = { id: Date.now(), text: input.value, completed: false };
+    const newItem = {id: Date.now(), text: input.value, completed: false};
     setItems([...items, newItem]);
     e.target.reset(); // clear the input field
   };
@@ -19,7 +19,7 @@ function ToDoDay(props) {
   const handleToggleComplete = (itemToToggle) => {
     setItems(
       items.map((item) =>
-        item.id === itemToToggle.id ? { ...item, completed: !item.completed } : item
+        item.id === itemToToggle.id ? {...item, completed: !item.completed} : item
       )
     );
   };
@@ -57,7 +57,7 @@ function ToDoDay(props) {
       <ul>
         {items.map((item) => (
           <ToDoItem
-            key={item.id} // using unique task id as key
+            key={item.id}
             item={item}
             toggleComplete={handleToggleComplete}
             removeItem={handleRemoveItem}

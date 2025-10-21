@@ -17,8 +17,10 @@ function Dropdown(props) {
 
   // handle selecting a color option
   const handleOptionClick = (option) => {
-    setIsOpen(false); // close dropdown
-    onChange(option); // notify parent (App.js)
+    // close dropdown
+    setIsOpen(false);
+    // notify parent (App.js)
+    onChange(option);
   };
 
   // close dropdown when clicking outside
