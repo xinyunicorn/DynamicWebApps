@@ -63,7 +63,7 @@ function Dropdown(props) {
               <div
                 key={idx}
                 onClick={() => handleOptionClick(opt)}
-                style={{ padding: "5px", cursor: "pointer" }}
+                style={{padding: "5px", cursor: "pointer"}}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
