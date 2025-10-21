@@ -69,7 +69,7 @@ function App() {
       />
 
       {/* overall progress bar */}
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{marginBottom: "30px"}}>
         <ProgressBar progress={overallProgress} />
       </div>
 
