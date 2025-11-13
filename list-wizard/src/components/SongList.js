@@ -8,11 +8,14 @@ import {IoClose} from 'react-icons/io5'
 import {createRandomSong} from '../data'
 
 export default function SongList() {
+  // useDispatch is a tiny hook to get and name dispatch from our store
+  // so that we can call it in any component
   const dispatch = useDispatch()
   // Get list of songs
   // a selector in redux is a function that takes (at least) state as an agrument and
   // returns a "selected" piece of state
   const songPlaylist = useSelector((state) => {
+    // console.log(state.songs)
     return state.songs
   })
 

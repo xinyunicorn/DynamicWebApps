@@ -1,3 +1,5 @@
+import {useDispatch, useSelector} from 'react-redux'
+import {addMovie, removeMovie} from '../store'
 import Button from './Button'
 import Card from './Card'
 import {FaPlus} from 'react-icons/fa'
@@ -6,14 +8,20 @@ import {IoClose} from 'react-icons/io5'
 import {createRandomMovie} from '../data'
 
 export default function MovieList() {
+  // get local access to store's disptach
+  const dispatch = useDispatch()
   // Get list of movies
-  const moviePlaylist = ['testing 1234']
+  const moviePlaylist = useSelector((state) => {
+    return state.movies
+  })
 
   const handleMovieAdd = (movie) => {
     // Add movie to list of movies
+    dispatch(addMovie(movie))
   }
   const handleMovieRemove = (movie) => {
     // Remove movie from list of movies
+    dispatch(removeMovie(movie))
   }
 
   const renderedMovies = moviePlaylist.map((movie) => {
