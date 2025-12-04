@@ -4,12 +4,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
-body.light {
+.light {
   background: #ffffff;
   color: #222222;
 }
 
-body.dark {
+.dark {
   background: #222222;
   color: #ffffff;
 }
@@ -23,3 +23,60 @@ body.dark {
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.expense-form input,
+.expense-form select,
+.expense-form button {
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.light .expense-form select {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #333;
+}
+
+.dark .expense-form select {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #888;
+}
+
+button {
+  cursor: pointer;
+}
+
+.submit-button {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+/* LIGHT MODE: dark button */
+.light .submit-button {
+  background-color: #333;
+  color: #fff;
+}
+
+.light .submit-button:hover {
+  background-color: #555;
+}
+
+/* DARK MODE: lighter button */
+.dark .submit-button {
+  background-color: #ddd;
+  color: #000;
+}
+
+.dark .submit-button:hover {
+  background-color: #bbb;
+}
+

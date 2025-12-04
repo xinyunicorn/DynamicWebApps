@@ -1,11 +1,18 @@
 {
   "expenses": [
     {
-      "date": "2025-12-03",
-      "amount": 200,
+      "date": "2025-12-18",
+      "amount": 231,
       "category": "Cash",
-      "description": "food",
+      "description": "sdas",
       "id": 1
+    },
+    {
+      "date": "2025-12-12",
+      "amount": 324,
+      "category": "Cash",
+      "description": "no",
+      "id": 2
     }
   ]
 }
