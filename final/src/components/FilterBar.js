@@ -6,7 +6,7 @@ export default function FilterBar() {
   const dispatch = useDispatch()
 
   return (
-    <div style={{marginTop:"20px"}}>
+    <div className="expense-form" style={{marginTop:"20px"}}>
       <h3>Filters</h3>
 
       <input

@@ -21,10 +21,13 @@ function App() {
   const editingPanelStyle = {
     marginTop: "10px",
     padding: "10px",
-    border: "1px solid #ccc",
     borderRadius: "5px",
-    backgroundColor: theme === "dark" ? "#2a2a2a" : "#f5f5f5",
-    color: theme === "dark" ? "#f5f5f5" : "#000"
+    border: theme === "color" ? "1px solid #8a5451" : "1px solid #ccc",
+    backgroundColor:
+      theme === "light" ? "#f5f5f5" :
+      theme === "dark" ? "#2a2a2a" :
+      "#dab9b7ff",
+    color: theme === "dark" ? "#f5f5f5" : "#333"
   }
 
   return (

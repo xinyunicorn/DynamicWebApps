@@ -1,14 +1,18 @@
 import React, {useContext} from "react"
 import {ThemeContext} from "./ThemeContext"
 
-function ThemeToggle() {
-  const {theme, toggleTheme} = useContext(ThemeContext)
+export default function ThemeToggle() {
+  const {theme, toggleLightDark, switchColor} = useContext(ThemeContext)
 
   return (
-    <button onClick={toggleTheme}>
-      {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
-    </button>
+    <div style={{marginBottom:"20px", display:"flex", gap:"10px"}}>
+      <button onClick={toggleLightDark}>
+        Switch to {theme === "light" ? "Dark" : "Light"} Mode
+      </button>
+
+      <button onClick={switchColor}>
+        Switch to Color Mode
+      </button>
+    </div>
   )
 }
-
-export default ThemeToggle
