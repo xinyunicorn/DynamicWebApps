@@ -1,0 +1,29 @@
+### Get all expenses
+GET http://localhost:3001/expenses
+Content-Type: application/json
+
+### Create new expense
+POST http://localhost:3001/expenses
+Content-Type: application/json
+
+{
+  "date": "2025-12-01",
+  "amount": 42,
+  "category": "Cash",
+  "description": "Sample expense"
+}
+
+### Update expense by id
+PUT http://localhost:3001/expenses/1
+Content-Type: application/json
+
+{
+  "date": "2025-12-02",
+  "amount": 50,
+  "category": "Bills",
+  "description": "Updated expense"
+}
+
+### Delete expense by id
+DELETE http://localhost:3001/expenses/1
+Content-Type: application/json
