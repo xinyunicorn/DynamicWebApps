@@ -35,12 +35,14 @@ body {
   border-radius: 4px;
 }
 
+.light .expense-form input,
 .light .expense-form select {
   background-color: #fff;
   color: #000;
   border: 1px solid #333;
 }
 
+.dark .expense-form input,
 .dark .expense-form select {
   background-color: #444;
   color: #fff;
@@ -60,7 +62,6 @@ button {
   transition: background-color 0.2s ease;
 }
 
-/* LIGHT MODE: dark button */
 .light .submit-button {
   background-color: #333;
   color: #fff;
@@ -70,7 +71,6 @@ button {
   background-color: #555;
 }
 
-/* DARK MODE: lighter button */
 .dark .submit-button {
   background-color: #ddd;
   color: #000;
@@ -80,3 +80,30 @@ button {
   background-color: #bbb;
 }
 
+.submit-button2 {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.light .submit-button2 {
+  background-color: #333;
+  color: #fff;
+}
+
+.light .submit-button2:hover {
+  background-color: #555;
+}
+
+.dark .submit-button2 {
+  background-color: #ddd;
+  color: #000;
+}
+
+.dark .submit-button2:hover {
+  background-color: #bbb;
+}

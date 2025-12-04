@@ -33,8 +33,19 @@ export default function ExpenseList({setEditingExpense}) {
           <p><strong>Amount:</strong> ${e.amount}</p>
           <p><strong>Note:</strong> {e.description}</p>
 
-          <button onClick={() => dispatch(deleteExpenseAsync(e.id))}>Delete</button>
-          <button onClick={() => setEditingExpense(e)}>Update</button>
+          <button
+            className="submit-button2"
+            onClick={() => dispatch(deleteExpenseAsync(e.id))}
+          >
+            Delete
+          </button>
+
+          <button
+            className="submit-button2"
+            onClick={() => setEditingExpense(e)}
+          >
+            Update
+          </button>
         </div>
       ))}
     </div>
