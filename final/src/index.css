@@ -32,6 +32,11 @@ h3{
   color: #ffffff;
 }
 
+.color {
+  background-color: #ffe8e4;
+  color: #8a5451;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -47,7 +52,6 @@ h3{
 .expense-form button {
   background-color: inherit;
   color: inherit;
-  border: 1px solid #ccc;
   padding: 5px;
   margin: 5px 0;
   border-radius: 4px;
@@ -126,14 +130,10 @@ button {
   background-color: #bbb;
 }
 
-.color {
-  background-color: #ffe8e4;
-  color: #8a5451;
-}
-
 .color h1,
 .color h2,
-.color h3 {
+.color h3,
+.color p {
   color: #8a5451;
 }
 

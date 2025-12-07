@@ -43,48 +43,47 @@ export const updateExpenseAsync = createAsyncThunk(
 )
 
 const expensesSlice = createSlice({
-  name:"expenses",
-  initialState:{
-    expenses:[],    // holds all expense items
-    filters:{
-      category:"",  // category dropdown filter
-      search:"",    // search bar filter
-      sortOrder:"recent" // sort newest or oldest
+  name: "expenses",
+  initialState: {
+    expenses: [], // holds all expense items
+    filters: {
+      category: "",
+      search: "",
+      sortOrder: "recent"
     },
-    status:"idle"   // used if you want loading indicators later
   },
-  reducers:{
+  reducers: {
     // sets the category filter for the list
-    setCategoryFilter:(state, action)=>{
+    setCategoryFilter: (state, action) => {
       state.filters.category = action.payload
     },
     // sets the text search filter
-    setSearchFilter:(state, action)=>{
+    setSearchFilter: (state, action) => {
       state.filters.search = action.payload
     },
     // switch between recent/oldest sorting
-    setSortOrder:(state, action)=>{
+    setSortOrder: (state, action) => {
       state.filters.sortOrder = action.payload
     }
   },
   extraReducers: builder => {
     builder
       // when fetch succeeds, replace state with server data
-      .addCase(fetchExpenses.fulfilled, (state, action)=>{
+      .addCase(fetchExpenses.fulfilled, (state, action) => {
         state.expenses = action.payload
       })
       // push the new expense to local state
-      .addCase(addExpenseAsync.fulfilled, (state, action)=>{
+      .addCase(addExpenseAsync.fulfilled, (state, action) => {
         state.expenses.push(action.payload)
       })
       // remove the deleted expense from state
-      .addCase(deleteExpenseAsync.fulfilled, (state, action)=>{
+      .addCase(deleteExpenseAsync.fulfilled, (state, action) => {
         state.expenses = state.expenses.filter(exp => exp.id !== action.payload)
       })
       // find the matching expense and update it
-      .addCase(updateExpenseAsync.fulfilled, (state, action)=>{
+      .addCase(updateExpenseAsync.fulfilled, (state, action) => {
         const index = state.expenses.findIndex(exp => exp.id === action.payload.id)
-        if(index >= 0) state.expenses[index] = action.payload
+        if (index >= 0) state.expenses[index] = action.payload
       })
   }
 })

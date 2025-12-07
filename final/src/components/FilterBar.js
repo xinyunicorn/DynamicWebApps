@@ -6,11 +6,11 @@ export default function FilterBar() {
   const dispatch = useDispatch()
 
   return (
-    // using same "expense-form" class so it visually matches the add/edit form styling
-    <div className="expense-form" style={{marginTop:"20px"}}>
+    // "expense-form" class so it visually matches the add/edit form styling
+    <div className="expense-form" style={{marginTop: "20px"}}>
       <h3>Filters</h3>
 
-      {/* text search input for filtering by description */}
+      {/* user input for filtering by description */}
       <input
         type="text"
         placeholder="Search description"
@@ -36,7 +36,9 @@ export default function FilterBar() {
         defaultValue="recent"
       >
         <option value="recent">Most Recent</option>
-        <option value="oldest">Oldest</option>
+        <option value="oldest">Least Recent</option>
+        <option value="highest">Highest Amount</option>
+        <option value="lowest">Lowest Amount</option>
       </select>
     </div>
   )

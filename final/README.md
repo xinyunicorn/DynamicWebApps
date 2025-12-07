@@ -4,7 +4,14 @@ Link to slides: [https://docs.google.com/presentation/d/1FVZkNfx0yxSdnRzNBINjU6Z
 
 ## Context
 
-- tba
+- Track personal expenses, including cash payments, groceries, activities, etc.
+- Allow users to budget their spending in one place
+- Filter by categories and search based on description
+- Sort by date (from oldest or newest)
+- Each expense details the date, amount spent, category, and description
+- Visualize spending summaries of categories over a course of time (today, weekly, monthly, yearly) with graphs
+- Customize web experience with light, dark, or color mode themes
+- Enable persistent storage using JSON server
 
 ## Demo Time!
 
@@ -39,7 +46,10 @@ https://github.com/xinyunicorn/DynamicWebApps/tree/main/final
 `npm start`
 
 ## Possible Future Implementations/Features
-- tba
+- Export/import list of expenses or graph
+- Currency conversion
+    - use an API
+
 
 ## Questions/Feedback
 - tba

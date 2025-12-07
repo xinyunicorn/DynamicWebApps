@@ -1,15 +1,8 @@
 {
   "expenses": [
     {
-      "date": "2025-12-18",
-      "amount": 32,
-      "category": "Cash",
-      "description": "sdas",
-      "id": 1
-    },
-    {
       "date": "2025-12-12",
-      "amount": 324,
+      "amount": 322,
       "category": "Cash",
       "description": "no",
       "id": 2
@@ -18,8 +11,29 @@
       "date": "2025-12-12",
       "amount": 213,
       "category": "Bills",
-      "description": "sadas",
+      "description": "sad",
       "id": 3
+    },
+    {
+      "date": "2025-01-03",
+      "amount": 987.78,
+      "category": "Activities",
+      "description": "jh",
+      "id": 5
+    },
+    {
+      "date": "2024-07-07",
+      "amount": 293,
+      "category": "Bills",
+      "description": "fdsfd",
+      "id": 6
+    },
+    {
+      "date": "2025-12-07",
+      "amount": 623,
+      "category": "Misc",
+      "description": "fdssf",
+      "id": 7
     }
   ]
 }

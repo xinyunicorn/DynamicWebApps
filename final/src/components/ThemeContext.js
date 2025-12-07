@@ -4,7 +4,7 @@ import {createContext, useState} from "react"
 export const ThemeContext = createContext()
 
 export function ThemeContextProvider({children}) {
-  const [theme, setTheme] = useState("light") // start in light mode by default
+  const [theme, setTheme] = useState("light") // light mode by default
 
   // toggles only between light and dark, ignoring color mode
   const toggleLightDark = () => {
@@ -17,9 +17,9 @@ export function ThemeContextProvider({children}) {
   }
 
   return (
-    // provide the theme value + functions to the rest of the app
+    // provide the theme value and functions to the rest of the app
     <ThemeContext.Provider value={{theme, toggleLightDark, switchColor}}>
-      {children} {/* render all the child components */}
+      {children}
     </ThemeContext.Provider>
   )
 }

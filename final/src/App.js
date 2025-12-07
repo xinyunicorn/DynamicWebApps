@@ -1,5 +1,5 @@
 import {ThemeContextProvider} from "./components/ThemeContext"
-import AppContent from "./components/AppContent" // updated path
+import AppContent from "./components/AppContent"
 
 export default function App() {
   return (

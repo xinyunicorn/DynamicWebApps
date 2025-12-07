@@ -6,15 +6,14 @@ import {addExpenseAsync, updateExpenseAsync} from "../store/slices/expensesSlice
 export default function ExpenseForm({expenseToEdit, onEditComplete}) {
   const dispatch = useDispatch()
 
-  // form field states
   const [date, setDate] = useState("")
   const [amount, setAmount] = useState("")
   const [category, setCategory] = useState("Cash")
   const [description, setDescription] = useState("")
 
   // if editing mode is active, load the existing expense values into the form
-  useEffect(()=>{
-    if(expenseToEdit){
+  useEffect(() => {
+    if (expenseToEdit){
       setDate(expenseToEdit.date)
       setAmount(expenseToEdit.amount)
       setCategory(expenseToEdit.category)
@@ -22,11 +21,11 @@ export default function ExpenseForm({expenseToEdit, onEditComplete}) {
     }
   }, [expenseToEdit])
 
-  // handles both add + update depending on whether expenseToEdit exists
+  // handles both add/update depending on whether expenseToEdit exists
   const handleSubmit = e => {
     e.preventDefault()
 
-    if(expenseToEdit){
+    if (expenseToEdit){
       // update existing expense
       dispatch(updateExpenseAsync({
         ...expenseToEdit,
@@ -35,9 +34,10 @@ export default function ExpenseForm({expenseToEdit, onEditComplete}) {
         category,
         description
       }))
-      onEditComplete() // closes editing panel in app.js
-    } else {
-      // add a brand new expense
+      onEditComplete() // closes editing panel
+    } 
+    else {
+      // add a new expense
       dispatch(addExpenseAsync({
         date,
         amount: parseFloat(amount),
@@ -93,7 +93,7 @@ export default function ExpenseForm({expenseToEdit, onEditComplete}) {
         onChange={e => setDescription(e.target.value)}
       />
 
-      {/* button text changes depending on add vs edit mode */}
+      {/* button text changes depending on whether in add or edit mode */}
       <button
         type="submit"
         className="submit-button"
