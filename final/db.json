@@ -2,7 +2,7 @@
   "expenses": [
     {
       "date": "2025-12-18",
-      "amount": 231,
+      "amount": 32,
       "category": "Cash",
       "description": "sdas",
       "id": 1
@@ -13,6 +13,13 @@
       "category": "Cash",
       "description": "no",
       "id": 2
+    },
+    {
+      "date": "2025-12-12",
+      "amount": 213,
+      "category": "Bills",
+      "description": "sadas",
+      "id": 3
     }
   ]
 }
