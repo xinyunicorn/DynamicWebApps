@@ -1,14 +1,14 @@
 {
   "expenses": [
     {
-      "date": "2025-12-12",
+      "date": "2025-12-05",
       "amount": 322,
       "category": "Cash",
-      "description": "no",
+      "description": "jsfdlk",
       "id": 2
     },
     {
-      "date": "2025-12-12",
+      "date": "2025-12-05",
       "amount": 213,
       "category": "Bills",
       "description": "sad",
@@ -29,11 +29,25 @@
       "id": 6
     },
     {
-      "date": "2025-12-07",
+      "date": "2023-11-16",
       "amount": 623,
       "category": "Misc",
       "description": "fdssf",
       "id": 7
+    },
+    {
+      "date": "2025-12-08",
+      "amount": 423.47,
+      "category": "Cash",
+      "description": "ldjfsl",
+      "id": 8
+    },
+    {
+      "date": "2025-12-09",
+      "amount": 432.54,
+      "category": "Misc",
+      "description": "fjla",
+      "id": 9
     }
   ]
 }

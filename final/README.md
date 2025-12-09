@@ -46,6 +46,7 @@ https://github.com/xinyunicorn/DynamicWebApps/tree/main/final
 `npm start`
 
 ## Possible Future Implementations/Features
+- Login/registration page
 - Export/import list of expenses or graph
 - Currency conversion
     - use an API

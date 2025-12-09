@@ -41,7 +41,7 @@ export default function AppContent() {
   return (
     <div className={theme} style={appBackground}>
       <div className="container">
-        <h1>Personal Financial Tracker</h1>
+        <h1>$pend: Personal Financial Tracker</h1>
 
         <ThemeToggle />
         <FilterBar />
