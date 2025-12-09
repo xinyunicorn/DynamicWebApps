@@ -17,7 +17,7 @@ export default function ExpenseChart() {
     color: "#8a5451"
   }
 
-  // state for dropdowns
+  // state for dropdowns; initially no time range selected
   const [timeRange, setTimeRange] = useState("")
   const [selectedWeek, setSelectedWeek] = useState("")
   const [selectedMonthYear, setSelectedMonthYear] = useState("")
@@ -48,23 +48,31 @@ export default function ExpenseChart() {
     yearSet.add(d.getFullYear())
   })
 
-  // prepare options
+  // get options for dropdowns from above sets
   const weekOptions = Array.from(weekSet).map(str => {
     const [year, week] = str.split("-").map(Number)
     const startDate = getStartOfWeek(week, year)
-    return {year, week, label: `Week of ${startDate.toLocaleString("default", {month: "long", day: "numeric"})}`}
+    return {
+      year, 
+      week, 
+      label: `Week of ${startDate.toLocaleString("default", {month: "long", day: "numeric"})}`
+    }
   }).sort((a, b) => a.year - b.year || a.week - b.week)
 
   const monthYearOptions = Array.from(monthYearSet).map(str => {
     const [month, year] = str.split("-")
-    return {month, year, label: `${new Date(year, month - 1).toLocaleString("default", {month: "long"})} ${year}`}
+    return {
+      month, 
+      year, 
+      label: `${new Date(year, month - 1).toLocaleString("default", {month: "long"})} ${year}`
+    }
   }).sort((a, b) => a.year - b.year || a.month - b.month)
 
   const yearOptions = Array.from(yearSet).sort()
 
   const todayDateStr = new Date().toISOString().split("T")[0]
 
-  // filter expenses based on selections
+  // filter expenses based on selections from dropdowns
   let filteredExpenses = []
 
   if (timeRange === "today") filteredExpenses = expenses.filter(exp => exp.date === todayDateStr)
@@ -99,7 +107,7 @@ export default function ExpenseChart() {
     <div style={{marginTop: "40px"}}>
       <h2>Spending Summary</h2>
 
-      {timeRange && <p><strong>Total Spent: ${totalAmount.toFixed(2)}</strong> ({timeRange})</p>}
+      {timeRange && <p><strong>Total Spent: ${totalAmount.toFixed(2)}</strong></p>}
 
       {/* dropdowns for selecting time range and relevant options */}
       <TimeRangeSelector
